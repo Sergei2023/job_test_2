@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>job_test_2</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamRise</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">TeamRise</div>
-            <button class="login_btn">Войти</button>
-        </div>
-    </header>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">TeamRise</div>
+      <button class="btn btn--outline header__login" type="button">
+        Войти
+      </button>
+    </div>
+  </header>
 
-    <main class="main">
-        <div class="container">
-            <div class="main_container">
-                <div class="text">
-                    <h1 class="title">TeamRise: Практика, которая имеет значение</h1>
-                    <p class="subtitle">Внутренняя платформа для управления бизнес-процессами. Быстрое развитие, реальные задачи и опыт, который ценится.</p>
-                    <button class="cta_btn">Начать</button>
-                </div>
-                <div class="image">
-                    <div class="image_content"></div>
-                </div>
-            </div>
+  <main class="main">
+    <div class="container">
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              TeamRise: Практика, которая имеет значение
+            </h1>
+            <p class="hero__subtitle">
+              Внутренняя платформа для управления бизнес-процессами. Быстрое развитие, реальные задачи и опыт, который ценится.
+            </p>
+            <button class="btn btn--primary hero__cta" type="button">
+              Начать
+            </button>
+          </div>
+
+          <div class="hero__image">
+            <div class="hero__image-placeholder" aria-hidden="true"></div>
+          </div>
         </div>
-    </main>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

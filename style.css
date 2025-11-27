@@ -1,177 +1,201 @@
+/* Базовые настройки */
+:root {
+  --color-bg: #E8D8C4;
+  --color-text-main: #561C24;
+  --color-accent: #6D2932;
+  --color-border: #C7B7A3;
+
+  --radius-sm: 5px;
+  --radius-md: 8px;
+
+  --shadow-soft: 0 10px 30px rgba(86, 28, 36, 0.1);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #561C24;
-    background-color: #E8D8C4;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* header */
+/* Кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  border-radius: var(--radius-md);
+  border: 0;
+  background: none;
+  color: inherit;
+
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn--outline {
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.btn--outline:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.btn--primary {
+  padding: 0.9375rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+
+  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-text-main) 0%, var(--color-accent) 100%);
+  box-shadow: 0 4px 6px rgba(86, 28, 36, 0.3);
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(86, 28, 36, 0.4);
+}
+
+/* Шапка */
 .header {
-    padding: 20px 0;
-    border-bottom: 1px solid #C7B7A3;
-    background-color: #E8D8C4;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #561C24;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
 }
 
-.login_btn {
-    padding: 10px 20px;
-    background-color: transparent;
-    border: 2px solid #6D2932;
-    color: #6D2932;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.login_btn:hover {
-    background-color: #6D2932;
-    color: #E8D8C4;
-}
-
-/* main */
+/* Главный блок (hero) */
 .main {
-    padding: 80px 0;
-    background-color: #E8D8C4;
+  padding: 80px 0;
 }
 
-.main_container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.text {
-    flex: 1;
-    text-align: center;
+.hero__text {
+  flex: 1;
+  text-align: center;
 }
 
-.title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #561C24;
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--color-text-main);
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    color: #6D2932;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.hero__subtitle {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-.cta_btn {
-    padding: 15px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #E8D8C4;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #561C24 0%, #6D2932 100%);
-    box-shadow: 0 4px 6px rgba(86, 28, 36, 0.3);
+.hero__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.cta_btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(86, 28, 36, 0.4);
+.hero__image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+
+  background: linear-gradient(135deg, #B8A287 0%, #E7D4B8 50%, #F7EFE2 100%);
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
 }
 
-/* image */
-.image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.image_content {
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    background: linear-gradient(135deg, #B8A287 0%, #E7D4B8 50%, #F7EFE2 100%);
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(86, 28, 36, 0.1);
-    border: 2px solid #C7B7A3;
-}
-
-/* десктоп (1366px и шире) */
+/* Десктоп (1366px и шире) */
 @media (min-width: 1366px) {
-    .main_container {
-        flex-direction: row;
-        align-items: center;
-        gap: 60px;
-    }
-    
-    .text-content {
-        text-align: left;
-    }
-    
-    .title {
-        font-size: 3rem;
-    }
-    
-    .image_content {
-        height: 400px;
-    }
+  .hero__content {
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .hero__text {
+    text-align: left;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__image-placeholder {
+    height: 400px;
+  }
 }
 
-/* телефон(320px) */
+/* Мобильные устройства (узкие экраны, до 375px) */
 @media (max-width: 375px) {
-    .main {
-        padding: 40px 0;
-    }
-    
-    .title {
-        font-size: 2rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-    }
-    
-    .cta_btn {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-    
-    .image_content {
-        height: 200px;
-    }
+  .main {
+    padding: 40px 0;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .btn--primary {
+    padding: 0.75rem 1.875rem;
+    font-size: 1rem;
+  }
+
+  .hero__image-placeholder {
+    height: 200px;
+  }
 }
